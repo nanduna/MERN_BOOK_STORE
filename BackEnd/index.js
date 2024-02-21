@@ -34,14 +34,10 @@ app.post('/book', async(request, response) =>{
 
         return response.status(201).send(book)
 
-    }catch{
-        console.log(error.message)
-        response.status(500).send({message: error.message})
+      } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
     }
-})
-
-app.listen(PORT, ()=>{
-    console.log(`App is listening to port: ${PORT}`)
 })
 
 mongoose
