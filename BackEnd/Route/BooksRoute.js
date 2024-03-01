@@ -33,7 +33,7 @@ router.post("/", async (request, response) => {
 
 router.get("/", async (request, response) => {
   try {
-    const books = await book.find({});
+    const books = await Book.find({});
     return response.status(200).json({
       count: books.length,
       data: books,
@@ -47,7 +47,7 @@ router.get("/", async (request, response) => {
 // get all books from database
 router.get("/", async (request, response) => {
   try {
-    const books = await book.find({});
+    const books = await Book.find({});
     return response.status(200).json({
       count: books.length,
       data: books,
@@ -63,7 +63,7 @@ router.get("/:id", async (request, response) => {
   try {
     const { id } = request.params;
     const book = await book.findById({ id });
-    return response.status(200).json({ book });
+    return response.status(200).json({ Book });
   } catch (err) {
     console.log(err.message);
     response.status(500).send({ message: err.message });
@@ -86,7 +86,7 @@ router.get("/:id", async (request, response) => {
 
     const { id } = request.params;
 
-    const result = await book.findByIDAndUpdate(id, request.body);
+    const result = await Book.findByIDAndUpdate(id, request.body);
 
     if (!result) {
       return response.status(404).json({ message: "book not found" });
@@ -103,7 +103,7 @@ router.get("/:id", async (request, response) => {
 
 router.delete("/:id", async (request, response) => {
   try {
-    const result = await book.findByIDAndDelete(id);
+    const result = await Book.findByIDAndDelete(id);
 
     if (!result) {
       return response.status(404).json({ message: "book not found" });

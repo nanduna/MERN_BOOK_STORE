@@ -11,11 +11,11 @@ import ShowBook from './Pages/ShowBook'
 export const App = () => {
   return (
     <Routes>
-      <Route path='/' element ={<Home/>}/>
-      <Route path='/Book/Create' element ={<CreateBook/>}/>
-      <Route path='/Book/Delete' element ={<DeleteBook/>}/>
-      <Route path='/Book/Edit' element ={<EditBook/>}/>
-      <Route path='/Book/Show' element ={<ShowBook/>}/>
+      <Route path='/' element={<Home />} />
+      <Route path='/Book/Create' element={<CreateBook />} />
+      <Route path='/Book/Delete/:bookId' element={<DeleteBook />} />
+      <Route path='/Book/Edit/:bookId' element={<EditBook />} />
+      <Route path='/Book/Show/:bookId' element={<ShowBook />} />
     </Routes>
   )
 }
