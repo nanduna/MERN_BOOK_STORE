@@ -103,6 +103,7 @@ router.get("/:id", async (request, response) => {
 
 router.delete("/:id", async (request, response) => {
   try {
+    const { id } = request.params;
     const result = await Book.findByIDAndDelete(id);
 
     if (!result) {

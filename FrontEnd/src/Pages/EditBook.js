@@ -29,7 +29,7 @@ const EditBook = () => {
       alert(`An error happened. please Chack console`);
       console.log(error)
     })
-  },[id]); 
+  },[]); 
 
   const handleSaveBook = () => {
     const data = {
