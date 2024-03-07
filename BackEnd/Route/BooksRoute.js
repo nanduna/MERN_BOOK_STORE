@@ -72,7 +72,7 @@ router.get("/:id", async (request, response) => {
 
 //update a book
 
-router.get("/:id", async (request, response) => {
+router.put("/:id", async (request, response) => {
   try {
     if (
       !request.body.title ||
